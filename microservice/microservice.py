@@ -6,6 +6,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    resp = Response('{ "message" : "Service running. Python version: ' + sys.version + '"}')
+    resp = Response('{ "André" : "Service running. Python version: ' + sys.version + '"}')
+    resp1 = Response('{ "message" }')
     resp.headers['Content-Type'] = 'application/json'
-    return resp
+    resp1.headers['Content-Type'] = 'application/json'
+    return resp, resp1
